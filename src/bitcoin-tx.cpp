@@ -1,4 +1,5 @@
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2021 The PuertoRicoTainoCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -97,9 +98,9 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs)) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " litecoin-tx utility version " + FormatFullVersion() + "\n\n" +
-            "Usage:  litecoin-tx [options] <hex-tx> [commands]  Update hex-encoded litecoin transaction\n" +
-            "or:     litecoin-tx [options] -create [commands]   Create hex-encoded litecoin transaction\n" +
+        std::string strUsage = PACKAGE_NAME " puertoricotainocoin-tx utility version " + FormatFullVersion() + "\n\n" +
+            "Usage:  puertoricotainocoin-tx [options] <hex-tx> [commands]  Update hex-encoded puertoricotainocoin transaction\n" +
+            "or:     puertoricotainocoin-tx [options] -create [commands]   Create hex-encoded puertoricotainocoin transaction\n" +
             "\n";
         strUsage += gArgs.GetHelpMessage();
 

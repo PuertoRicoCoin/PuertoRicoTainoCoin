@@ -63,10 +63,10 @@ def read_dump(file_name, addrs, script_addrs, hd_master_addr_old):
                         if addr.startswith('m') or addr.startswith('n'):
                             # P2PKH address
                             found_legacy_addr += 1
-                        elif addr.startswith('Q'):
+                        elif addr.startswith('P'):
                             # P2SH-segwit address
                             found_p2sh_segwit_addr += 1
-                        elif addr.startswith('rltc1'):
+                        elif addr.startswith('rprtc1'):
                             found_bech32_addr += 1
                         break
                     elif keytype == "change=1":

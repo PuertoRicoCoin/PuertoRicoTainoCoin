@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2021 The PuertoRicoTainoCoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -73,7 +74,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "litecoin.conf";
+const char * const BITCOIN_CONF_FILENAME = "puertoricotainocoin.conf";
 
 ArgsManager gArgs;
 
@@ -661,7 +662,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "litecoin";
+    const char* pszModule = "puertoricotainocoin";
 #endif
     if (pex)
         return strprintf(
@@ -686,7 +687,7 @@ fs::path GetDefaultDataDir()
     // Unix: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Litecoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "PuertoRicoTainoCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -696,10 +697,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/Litecoin";
+    return pathRet / "Library/Application Support/PuertoRicoTainoCoin";
 #else
     // Unix
-    return pathRet / ".litecoin";
+    return pathRet / ".puertoricotainocoin";
 #endif
 #endif
 }
@@ -1212,7 +1213,9 @@ std::string CopyrightHolders(const std::string& strPrefix)
     // Make sure Bitcoin Core copyright is not removed by accident
     if (copyright_devs.find("Bitcoin Core") == std::string::npos) {
         std::string strYear = strPrefix;
-        strYear.replace(strYear.find("2011"), sizeof("2011")-1, "2009");
+        strYear.replace(strYear.find("2021"), sizeof("2021")-1, "2011-2021");
+        strCopyrightHolders += "\n" + strYear + "The Litecoin Core developers";
+        strYear.replace(strYear.find("2011-2021"), sizeof("2011-2021")-1, "2009-2021");
         strCopyrightHolders += "\n" + strYear + "The Bitcoin Core developers";
     }
     return strCopyrightHolders;

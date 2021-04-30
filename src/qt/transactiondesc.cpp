@@ -43,7 +43,7 @@ QString TransactionDesc::FormatTxStatus(const interfaces::WalletTx& wtx, const i
             return tr("conflicted with a transaction with %1 confirmations").arg(-nDepth);
         else if (nDepth == 0)
             return tr("0/unconfirmed, %1").arg((inMempool ? tr("in memory pool") : tr("not in memory pool"))) + (status.is_abandoned ? ", "+tr("abandoned") : "");
-        else if (nDepth < 6)
+        else if (nDepth < 7)
             return tr("%1/unconfirmed").arg(nDepth);
         else
             return tr("%1 confirmations").arg(nDepth);
